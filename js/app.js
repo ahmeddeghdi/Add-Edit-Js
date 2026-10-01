@@ -22,9 +22,11 @@ var alertDescraption = document.getElementById("alerDescraption");
 var alertName = document.getElementById("alerName");
 /* end delecreate variables */
 
-ArrayCardes = [];
+var ArrayCardes = [];
 if (localStorage.getItem("Cards") == null) {
-  ArrayCardes = JSON.parse(localStorage.getItem("Cards"));
+    ArrayCardes = JSON.parse(localStorage.getItem("Cards"));
+    DisplayShow();
+
 }
 /* start function AddCard */
 function AddCard() {
@@ -47,12 +49,13 @@ function AddCard() {
       isFavorite: false,
       isEmergency: false,
     };
-    ArrayCardes.push(cardes);
+      ArrayCardes.push(cardes);
     localStorage.setItem("Cards", JSON.stringify(ArrayCardes));
     DisplayShow();
     SaveButn.classList.add("d-none");
     UpdateButn.classList.remove("d-none");
-  }
+
+}
 }
 /* end function AddCard */
 
