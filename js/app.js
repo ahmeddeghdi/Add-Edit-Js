@@ -170,6 +170,7 @@ function updateDataNew() {
   DisplayShow();
   UpdateButn.classList.add("d-none");
   SaveButn.classList.remove("d-none");
+  return true;
 }
 }
 function AddFavorite() {
