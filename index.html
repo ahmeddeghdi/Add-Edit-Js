@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Assignment Js</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg background-color">
+        <div class="container-fluid">
+            <!-- this icon -->
+            <div class="d-flex">
+                <div class="icon ">
+
+                    <i class="fa-solid fa-address-book address mt-3"></i>
+                    <!-- Button trigger modal -->
+
+                </div>
+                <div class="logo">
+                    <h6 class="d-block mtop ms-2 font-size">Contact <span class="color">Hub</span></h6>
+                    <p class="mbtom ms-2 text-secondary">Smart Contact Manager</p>
+                </div>
+
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="    d-flex justify-content-between gap-5">
+                    <div class="mleft">
+
+
+                    </div>
+
+                    <div class="icon-plus mt-4 ">
+                        <button type="button" class="btn btn-Move" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">
+                        <i class="fa-solid fa-plus "></i>
+                            Add Contact
+                        </button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Contact</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="mb-3">
+                                                        <label for="exampleFormControlInput1" class="form-label">full
+                                                            name</label>
+                                                        <input type="text" class="form-control "
+                                                            id="exampleFormControlInput1" placeholder="Enter full name">
+                                                            <p class="text-success d-none" id="alerName">  This is a success alert—check it out!</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="mb-3">
+                                                        <label for="exampleFormControlInput1" class="form-label">Phone
+                                                            Number</label>
+                                                        <input type="tel" class="form-control" id="phone"
+                                                            placeholder="e.g., 01012345678">
+                                                             <p class="text-success d-none" id="alerPhone">  This is a success alert—check it out!</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="mb-3">
+                                                        <label for="exampleFormControlInput1" class="form-label">Email
+                                                            Adress</label>
+                                                        <input type="email" class="form-control" id="ShowEmaill"
+                                                            placeholder="name@example.com">
+                                                            <p class="text-success d-none" id="alerEmail">  This is a success alert—check it out!</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="mb-3">
+                                                        <label for="exampleFormControlInput1"
+                                                            class="form-label">Address</label>
+                                                        <input type="text" class="form-control" id="cahngAddres"
+                                                            placeholder="Enter address">
+                                                              <p class="text-success d-none" id="alerAddress">  This is a success alert—check it out!</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="mb-3">
+                                                        <label for="exampleFormControlInput1"
+                                                            class="form-label">Group</label>
+                                                        <select class="form-select form-select-lg mb-3 Select-option"
+                                                            aria-label="Large select example" >
+                                                            <option selected>Select a group</option>
+                                                            <option value="Family">Family</option>
+                                                            <option value="Friends">Friends</option>
+                                                            <option value="Work">Work</option>
+                                                            <option value="School">School</option>
+                                                            <option value="Other">Other</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="mb-3">
+                                                        <label for="exampleFormControlInput1" class="form-label">Notes
+                                                            </label>
+                                                        <div class="form-floating">
+                                                            <label for="floatingTextarea">Comments</label>
+                                                            <textarea class="form-control"
+                                                                placeholder="Leave a comment here"
+                                                                id="floatingTextarea"></textarea>
+                                                        <p class="text-success d-none" id="alerDescraption">  This is a success alert—check it out!</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex gap-4">
+                                                <div class="inout-favorite">
+                                                    <input type="checkbox" id="ChooseInput">
+                                                    <label for="ChooseInput">Favorite</label>
+                                                </div>
+                                                <div class="inout-emarg">
+                                                    <input type="checkbox" id="ChooseInputElement">
+                                                    <label for="ChooseInputElement">Emergency</label>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">cancel</button>
+                                            <button type="button" class="btn btn-primary SaveButn"  onclick="AddCard()">Save
+                                            contact</button>
+                                        <button type="button" class="btn btn-primary UpdateButn d-none text-bg-danger" onclick="updateDataNew()">Update Data</button> 
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-bell  bell"></i>
+                        <i class="fa-solid fa-gear  gear"></i>
+                    </div>
+                    <!-- <div class="Images "> -->
+                    <!-- <img src="img/avatar-1-CwUcGkzI.jpg"  alt=""> -->
+                </div>
+            </div>
+        </div>
+        </div>
+    </nav>
+    <!-- start card -->
+    <section class="mt-5">
+        <div class="container">
+            <div class="d-flex gap-5 ms-5">
+                <div class="card" >
+                    <div class="d-flex">
+                        <i class="fa-solid fa-users users  me-3 shadow"></i>
+                        <p class="text-secondary text-uppercase">total</p>
+                        <span class="mt-3 zero-one"     id="">0</span>
+                    </div>
+                </div>
+                <div class="card ">
+                    <div class="d-flex">
+                        <!-- <i class="fa-regular fa-star "></i> -->
+                        <i class="fa-solid fa-star me-3 star shadow"></i>
+                        <p class="text-secondary text-uppercase">Favorites</p>
+                        <span class="mt-3 zero-one-two" id="showFavorites">0</span>
+                    </div>
+                </div>
+                <div class="card ">
+                    <div class="d-flex">
+                        <i class="fa-solid fa-heart-pulse pulse shadow me-3"></i>
+                        <p class="text-secondary text-uppercase ">Emergency</p>
+                        <span class="mt-3 zero-one-three" id="showEmergency">0</span>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <!--start conatact  -->
+        <section class="conatact">
+            <div class="container">
+                <div class="header-conatact">
+                    <h1>
+                        All Contacts
+                    </h1>
+                    <p>Manage and organize your 0 contacts</p>
+                </div>
+                <div class="input">
+                    <label for="search"></label>
+                    <input type="search"  placeholder="Search by name,phone,or emaill....."
+                        class=" paddaing rounded-1 border " onkeyup="SearchData()" id="FilterSearch" />
+                </div>
+            </div>
+            <!-- start left card -->
+            <div class="float-end">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card-Favorites border">
+                                <div class="border-color">
+                                    <!-- icon -->
+                                    <i class="fa-solid fa-star icon-star"></i>
+                                    <div class="mBotom">
+                                        <h4 class="Size ">Favorites</h4>
+                                        <p class="Font-size mbtom " >Quick access to starred contacts</p>
+                                    </div>
+
+                                </div>
+                                <div class="favrioute-note">
+                                    <p class="text-center" id="Changedata">No favorites yet</p>
+                                    <div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row margin">
+                        <div class="col-md-6">
+                            <div class="card-Favorites border">
+                                <div class="border-color">
+                                    <!-- icon -->
+                                    <i class="fa-solid fa-heart-pulse Star"></i>
+                                    <div class="mbotom">
+                                        <h4 class="Size ">Favorites</h4>
+                                        <p class="Font-size mbtom">Quick access to starred contacts</p>
+                                    </div>
+                                </div>
+                                <div class="favrioute-note">
+                                    <p class="text-center" id="ChangeDataEmergency">No emergency contacts</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear-fix"></div>
+            </div>
+            <!-- end left card -->
+
+            <!-- start rigth  card -->
+            <div id="ShowData">
+                <!-- <div class="d-flex">
+                 <div class="width border flex-wrap d-flex">
+                    <div class="card-one">
+                        <div class="header-name ">
+                            <h5 class="paddaing-name" id="name"></h5>
+                            <div class="ps-3 mtop">
+                                <h5 id="name">a</h5>
+                                <i class="fa-solid fa-phone phone"></i>
+                                <a href="tel" class="tel text-secondary" id="phone"></a>
+                            </div>
+                            <div class="icon-one d-flex  ">
+                                <i class="fa-solid fa-envelope  envelope"></i>
+                                <p class="ms-2" id="email">a</p>
+                            </div>
+                            <div class="icon-two d-flex  Margin">
+                                <i class="fa-solid fa-location-dot location"></i>
+                                <p class="ms-2" id="cahngelocation">l</p>
+                            </div>
+                            <div class="ms-2">
+                                <span class="paddaing-border">Familly</span>
+
+                            </div>
+                            <div class="border-card d-flex  mt-5"> 
+                                 <button class="btn">
+                                        <i class="fa-solid fa-phone Phone mt-1 ms-2">
+                                        <a href="tel" class="" id=""></a>
+                                        </i>
+                                    </button>
+                                <button class="btn">
+                                    <i class="fa-solid fa-envelope  "></i>
+                                </button>
+                                </i>
+                                <div class="icon-edit mt-2">
+                                    <button class="btn">
+                                        <i class="fa-regular fa-star star-one"></i>
+                                    </button>
+                                    <button class="btn">
+                                        <i class="fa-regular fa-heart heart"></i>
+                                    </button>
+                                    <button class="btn">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </button>
+                                    <button class="btn" >
+                                        <i class="fa-solid fa-trash" ></i>
+                                    </button>
+                                </div> 
+    
+                            </div> 
+                        </div>
+                        
+                    </div>
+                </div>
+                
+               </div> 
+                -->
+            </div>
+           
+            <!-- end rigth  card -->
+        </section>
+        <!--end conatact  -->
+        <script src="./js/bootstrap.bundle.js"></script>
+        <script src="./js/app.js"></script>
+
+</body>
+
+</html>

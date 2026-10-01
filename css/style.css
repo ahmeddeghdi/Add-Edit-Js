@@ -1,0 +1,340 @@
+
+.Images img{
+    width: 19%;
+    border-radius: 50%;
+    /* margin-left:900px; */
+    /* margin-top: -50px; */
+}
+
+.plus{
+    padding-inline: 40px;
+    padding-block: 9px;
+    background-color: #5339F7;
+    border-radius: 10px;
+    color: white;
+    height: 34px;
+}
+
+.icon-plus{
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.bell{
+    padding-block: 9px;
+    height: 34px;
+    padding-inline: 10px;
+    border-radius: 10px;
+}
+.bell:hover{
+    background-color: #F3F4F6;
+    cursor: pointer;
+}
+.gear{
+    padding-block: 9px;
+    height: 34px;
+    padding-inline: 10px;
+    border-radius: 10px;
+}
+.gear:hover{
+    background-color: #F3F4F6;
+    cursor: pointer;
+}
+
+.address{
+    padding-inline: 10px;
+    padding-block: 10px;
+    background-color: #5339F7;
+    margin-top: 10px;
+    border-radius: 10px;
+    color: white;
+
+}
+
+.mtop{
+    margin-top: 10px;
+}
+
+.mbtom{
+    margin-top:25px;
+}
+
+.color{
+    color: #7F22FE;
+}
+
+.font-size{
+    font-size:24px ;
+    font-weight: 700;
+}
+
+.icon-plus{
+    margin-left: 900px;
+    /* margin-top:-120px; */
+    display: inline-flex;
+}
+
+.background-color{
+    background-color: #FDFDFE;
+    /* border: 1px solid; */
+}
+
+.card{
+    width: 100%;
+    /* border: 1px solid ; */
+    background-color: #FFFFFF;
+    padding-block:19px;
+}
+
+.card:hover{
+   box-shadow:  0 8px 16px #00000026 ;
+}
+
+.users{
+    margin-top: 2px;
+    margin-left: 20px;
+    padding-inline: 10px;
+    padding-block: 10px;
+    height: 40px;
+    background-color: #1B68FF;
+    border-radius: 10px;
+    color: white;
+}
+.pulse{
+    margin-top: 2px;
+    margin-left: 20px;
+    padding-inline: 10px;
+    padding-block: 10px;
+    height: 40px;
+    border-radius: 10px;
+    color: white;
+    background-color: #F81345;
+}
+.star{
+    margin-top: 2px;
+    margin-left: 20px;
+    padding-inline: 10px;
+    padding-block: 10px;
+    height: 40px;
+    background-color: #FF9F00;
+    border-radius: 10px;
+    color: white;
+}
+
+.zero-one{
+    margin-left: -30px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.zero-one-two{
+    margin-left: -50px;
+    font-size: 24px;
+    font-weight: 700;
+}
+.zero-one-three{
+    margin-left: -50px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.paddaing{
+    padding-inline: 20px;
+    padding-block: 5px;
+    width: 40%;
+}
+
+.header-conatact{
+    margin-top: 100px;
+}
+
+/* .border{
+    background-color: #FFF8EC;
+    margin-left: -500px;
+    width: 190px;
+    margin-top: -100px;
+    border-radius: 10px;
+} */
+
+.fovarite{
+    text-align: center;
+    margin-top: -20px;
+    margin-left: 50px;
+}
+
+.card-Favorites{
+    float: left;
+    width: 250px;
+    height: 200px;
+    margin-left: -450px;
+    margin-top: -200px;
+}
+
+
+.border-color{
+    background-color: #FFF7EC;
+    height: 70px;
+}
+
+.margin{
+    margin-top: 220px;
+}
+
+.Font-size{
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.Size{
+    font-size: 16px;
+    font-weight: 600;
+    padding-inline: 5px;
+}
+
+.mbotom{
+    margin-top: -36px;
+    margin-left: 50px;
+}
+.mBotom{
+    margin-top: -36px;
+    margin-left: 55px;
+}
+
+.Star{
+    margin-left: 6px;
+    margin-top: 10px;
+    padding-inline: 10px;
+    padding-block: 10px;
+    background-color: #ED0029;
+    border-radius: 10px;
+    color: white;
+}
+
+.icon-star{
+     padding-inline: 10px;
+    padding-block: 10px;
+    background-color: #FF9F00;
+    margin-top: 20px;
+    margin-left: 10px;   
+    border-radius: 10px;
+    color: white;
+}
+
+.width{
+    width: 25%;
+    margin-left: 90px;
+    margin-top: 30px;
+    /* height: 350px; */
+}
+
+.card-one{
+    width: 80%;
+    background-color: #FFFFFF;
+    padding-block: 19px;
+}
+
+.icon-two{
+    margin-left:10px ;
+}
+.icon-one{
+    margin-left:20px ;
+    margin-top: 19px;
+}
+
+.location{
+    padding-inline: 10px;
+    padding-block: 8px;
+    height: 30px;
+    background-color: #D0FAE5;
+    color: #009966;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+.envelope{
+    padding-inline: 10px;
+    padding-block: 8px;
+    height: 30px;
+    background-color: #D0FAE5;
+    color: #009966;
+    border-radius: 10px;
+}
+
+.phone{
+    padding-inline: 6px;
+    padding-block: 5px;
+    border-radius: 5px;
+    background-color: #DBEAFE;
+    color: #155DFC;
+}
+
+.paddaing-name{
+    width:15%;
+    margin-left: 7px;
+    /* padding-inline: 20px; */
+    padding-block: 10px;
+    background-color: #00A485;
+    color: white;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.mtop{
+    margin-top: -40px;
+    margin-left: 50px;
+}
+
+.tel{
+    text-decoration: none;
+}
+
+.paddaing-border{
+    padding-inline: 6px;
+    padding-block: 2px;
+    border-radius: 5px;
+    background-color: #DBEAFE;
+    color: #155DFC;
+
+}
+.border-card{
+    border: 1px solid #F6F7F9;
+     background-color: #FAFBFC;
+    height: 60px;
+    border-radius: 10px;
+    /* margin; */
+    margin-left: -10px;
+    margin-top: 10px;
+    width: 360px;
+
+}
+
+.icon-edit{
+    margin-left: 20px;
+}
+
+.star-one{
+padding-inline: 10px;
+    padding-block: 10px;
+    border-radius: 10px;
+}
+.star-one:hover{
+    color: #FFB900;
+    background-color: #F3F4F6;
+
+}
+
+.heart{
+    padding-inline: 10px;
+    padding-block: 10px;
+    border-radius: 10px;
+}
+.heart:hover{
+    color: #FF2056;
+    background-color: #F3F4F6;
+    
+}
+
+.btn-Move{
+    background: linear-gradient(#7D24FE,#5438F7);
+    color: white;
+}
