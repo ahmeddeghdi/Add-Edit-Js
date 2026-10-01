@@ -35,6 +35,10 @@ console.log(
 );
 
  var ArrayCardes = [];
+ if (localStorage.getItem("Cardes") == null) {
+   ArrayCardes =JSON.parse(localStorage.getItem("Cardes"));
+   DisplayShow();
+ }
 function AddCard() {
     if(HandleValidEmaill() && HandleValidphone() && HandleValidadress() && HandleValidDesc() && HandleValidName()){
     var cardes = {
