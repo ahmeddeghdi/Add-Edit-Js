@@ -57,7 +57,9 @@ function AddCard() {
     };
     DisplayShow();
     ArrayCardes.push(cardes);
-    localStorage.setItem("Cardes",JSON.stringify(ArrayCardes));        
+    localStorage.setItem("Cardes",JSON.stringify(ArrayCardes)); 
+    localStorage.removeItem("Cards",JSON.stringify(ArrayCardes)); 
+
     SaveButn.classList.add("d-none");
     UpdateButn.classList.remove("d-none");
   }
