@@ -161,7 +161,7 @@ function EditDataNew(index) {
 }
 
 // Updates the selected contact and saves the changes.
-function updateDataCardes() {
+function handleUpdateData() {
   ArrayCardes[CurrentIndex].tittle = EmaillElement.value;
   ArrayCardes[CurrentIndex].Phone = Number(inputPhone.value);
   ArrayCardes[CurrentIndex].FullName = FullNameElement.value;
