@@ -39,6 +39,7 @@ console.log(
    ArrayCardes =JSON.parse(localStorage.getItem("Cardes"));
    DisplayShow();
  }
+// Validates the form and saves a new contact to local storage.
 function AddCard() {
     if(HandleValidEmaill() && HandleValidphone() && HandleValidadress() && HandleValidDesc() && HandleValidName()){
     var cardes = {
@@ -62,6 +63,7 @@ function AddCard() {
   }
 }
 
+// Renders all saved contacts in the contacts list.
 function DisplayShow() {
   var temp = "";
   for (var i =0; i<ArrayCardes.length; i++) {
@@ -120,6 +122,7 @@ function DisplayShow() {
   document.getElementById("ShowData").innerHTML = temp;
 }
 
+// Removes the contact at the given index and saves the updated list.
 function Deletedata(x) {
     if(HandleValidEmaill() && HandleValidphone() && HandleValidadress() && HandleValidDesc() && HandleValidName()){
 
@@ -129,12 +132,13 @@ function Deletedata(x) {
   FullNameElement.value = "";
   AddressElement.value = "";
   locationElement.value = "";
-  localStorage.setItem("Cards", JSON.stringify(ArrayCardes));
+ localStorage.setItem("Cardes",JSON.stringify(ArrayCardes));
   DisplayShow();
     }
 }
 
 var CurrentIndex = 0;
+// Loads the selected contact's data into the form for editing.
 function EditDataNew(index) {
     if(HandleValidEmaill() && HandleValidphone() && HandleValidadress() && HandleValidDesc() && HandleValidName()){
   
@@ -149,13 +153,13 @@ function EditDataNew(index) {
     locationElement.value = ArrayCardes[index].location;
     SelectChoose.value = ArrayCardes[index].choose;
     descraption.value = ArrayCardes[index].desc;
-    localStorage.setItem("Cards", JSON.stringify(ArrayCardes));
+   localStorage.setItem("Cardes",JSON.stringify(ArrayCardes));
     DisplayShow();
   }
 }
 
-function updateDataNew() {
-
+// Updates the selected contact and saves the changes.
+function updateDataCardes() {
   ArrayCardes[CurrentIndex].tittle = EmaillElement.value;
   ArrayCardes[CurrentIndex].Phone = Number(inputPhone.value);
   ArrayCardes[CurrentIndex].FullName = FullNameElement.value;
@@ -165,11 +169,13 @@ function updateDataNew() {
   ArrayCardes[CurrentIndex].location = locationElement.value;
   ArrayCardes[CurrentIndex].choose = SelectChoose.value;
   ArrayCardes[CurrentIndex].desc = descraption.value;
-  localStorage.setItem("Cards", JSON.stringify(ArrayCardes));
+  localStorage.setItem("Cardes",JSON.stringify(ArrayCardes));
   DisplayShow();
   UpdateButn.classList.add("d-none");
   SaveButn.classList.remove("d-none");
 }
+
+// Renders contacts in the favorites panel.
 function AddFavorite() {
   var boxFavorite = "";
   for (var i = 0; i < ArrayCardes.length; i++) {
@@ -182,6 +188,7 @@ function AddFavorite() {
   document.getElementById("Changedata").innerHTML = boxFavorite;
 }
 
+// Renders contacts in the emergency panel.
 function AddEmargencey() {
   var boxEmargencey = "";
   for (var i = 0; i < ArrayCardes.length; i++) {
@@ -209,6 +216,7 @@ function AddEmargencey() {
  */
 
 EmaillElement.addEventListener("change",HandleValidEmaill);
+// Validates the email field and updates its feedback styles.
 function HandleValidEmaill() {
   var emailragex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   // console.log(emailragex.test(EmaillElement.value))
@@ -226,6 +234,7 @@ function HandleValidEmaill() {
 }
 
 inputPhone.addEventListener("change",HandleValidphone );
+// Validates the phone field and updates its feedback styles.
 function HandleValidphone() {
   var PhoneRagex = /^01[0125][0-9]{8}$/;
   if (PhoneRagex.test(inputPhone.value) == true) {
@@ -242,6 +251,7 @@ function HandleValidphone() {
   }
 }
 FullNameElement.addEventListener("change", HandleValidName);
+// Validates the name field and updates its feedback styles.
 function HandleValidName() {
   var NameRagex = /^[A-Za-z\s]{2,100}$/;
   if (NameRagex.test(FullNameElement.value) == true) {
@@ -259,6 +269,7 @@ function HandleValidName() {
 }
 
 AddressElement.addEventListener("change", HandleValidadress);
+// Validates the address field and updates its feedback styles.
 function HandleValidadress() {
   var AddressRagex = /^[A-Za-z0-9\s,.-]{5,100}$/;
   if (AddressRagex.test(AddressElement.value) == true) {
@@ -274,6 +285,7 @@ function HandleValidadress() {
   }
 }
 descraption.addEventListener("change", HandleValidDesc);
+// Validates the description field and updates its feedback styles.
 function HandleValidDesc() {
   var AddressRagex = /^[A-Za-z0-9\s.,!?()-]{10,500}$/;
   if (AddressRagex.test(descraption.value) == true) {
@@ -289,6 +301,7 @@ function HandleValidDesc() {
   }
 }
 
+// Builds the contacts list using the current name search text.
 function SearchData() {
   var temp = "";
   setTimeout(() => {
