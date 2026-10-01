@@ -1,4 +1,3 @@
-/* start delecreate variables */
 var EmaillElement = document.getElementById("ShowEmaill");
 var inputPhone = document.getElementById("phone");
 var FullNameElement = document.getElementById("exampleFormControlInput1");
@@ -20,22 +19,24 @@ var alertPhone = document.getElementById("alerPhone");
 var alertAddress = document.getElementById("alerAddress");
 var alertDescraption = document.getElementById("alerDescraption");
 var alertName = document.getElementById("alerName");
-/* end delecreate variables */
+console.log(
+  EmaillElement,
+  alertDescraption,
+  alertAddress,
+  alertPhone,
+  alertEmail,
+  SearchInput,
+  descraption,
+  SelectChoose,
+  UpdateButn,
+  SaveButn,
+  showTotalFavorites,
+  showTotalEmergency,
+);
 
-var ArrayCardes = [];
-if (localStorage.getItem("Cards") == null) {
-    ArrayCardes = JSON.parse(localStorage.getItem("Cards"));
-    DisplayShow();
-
-}
-/* start function AddCard */
+ var ArrayCardes = [];
 function AddCard() {
-  if (
-    HandleValidEmaill() &&
-    HandleValidphone() &&
-    HandleValidadress() &&
-    HandleValidDesc()
-  ) {
+    if(HandleValidEmaill() && HandleValidphone() && HandleValidadress() && HandleValidDesc() && HandleValidName()){
     var cardes = {
       tittle: EmaillElement.value,
       Phone: Number(inputPhone.value),
@@ -49,20 +50,17 @@ function AddCard() {
       isFavorite: false,
       isEmergency: false,
     };
-      ArrayCardes.push(cardes);
-    localStorage.setItem("Cards", JSON.stringify(ArrayCardes));
     DisplayShow();
+    ArrayCardes.push(cardes);
+    localStorage.setItem("Cardes",JSON.stringify(ArrayCardes));        
     SaveButn.classList.add("d-none");
     UpdateButn.classList.remove("d-none");
-
+  }
 }
-}
-/* end function AddCard */
 
-/* start function DisplayShow */
 function DisplayShow() {
   var temp = "";
-  for (var i = 0; i < ArrayCardes.length; i++) {
+  for (var i = 0; i<ArrayCardes.length; i++) {
     temp += `<div class="d-flex">
                  <div class="width border flex-wrap d-flex">
                     <div class="card-one">
@@ -117,10 +115,10 @@ function DisplayShow() {
   }
   document.getElementById("ShowData").innerHTML = temp;
 }
-/* end function DisplayShow */
 
-/* start function Deletedata */
 function Deletedata(x) {
+    if(HandleValidEmaill() && HandleValidphone() && HandleValidadress() && HandleValidDesc() && HandleValidName()){
+
   ArrayCardes.splice(x, 1);
   EmaillElement.value = "";
   inputPhone.value = "";
@@ -129,30 +127,32 @@ function Deletedata(x) {
   locationElement.value = "";
   localStorage.setItem("Cards", JSON.stringify(ArrayCardes));
   DisplayShow();
+    }
 }
-/* end function Deletedata */
 
-/* start function EditDataNew */
 var CurrentIndex = 0;
 function EditDataNew(index) {
-  CurrentIndex = index;
-  console.log(ArrayCardes[index].tittle);
-  EmaillElement.value = ArrayCardes[index].tittle;
-  inputPhone.value = ArrayCardes[index].Phone;
-  FullNameElement.value = ArrayCardes[index].FullName;
-  AddressElement.value = ArrayCardes[index].Address;
-  inputCheck.checked = ArrayCardes[index].Checked;
-  InputChecked.checked = ArrayCardes[index].CheckedInput;
-  locationElement.value = ArrayCardes[index].location;
-  SelectChoose.value = ArrayCardes[index].choose;
-  descraption.value = ArrayCardes[index].desc;
-  localStorage.setItem("Cards", JSON.stringify(ArrayCardes));
-  DisplayShow();
+    if(HandleValidEmaill() && HandleValidphone() && HandleValidadress() && HandleValidDesc() && HandleValidName()){
+  
+    CurrentIndex = index;
+    console.log(ArrayCardes[index].tittle);
+    EmaillElement.value = ArrayCardes[index].tittle;
+    inputPhone.value = ArrayCardes[index].Phone;
+    FullNameElement.value = ArrayCardes[index].FullName;
+    AddressElement.value = ArrayCardes[index].Address;
+    inputCheck.checked = ArrayCardes[index].Checked;
+    InputChecked.checked = ArrayCardes[index].CheckedInput;
+    locationElement.value = ArrayCardes[index].location;
+    SelectChoose.value = ArrayCardes[index].choose;
+    descraption.value = ArrayCardes[index].desc;
+    localStorage.setItem("Cards", JSON.stringify(ArrayCardes));
+    DisplayShow();
+  }
 }
-/* end function EditDataNew */
 
-/* start function updateDataNew */
 function updateDataNew() {
+    if(HandleValidEmaill() && HandleValidphone() && HandleValidadress() && HandleValidDesc() && HandleValidName()){
+
   ArrayCardes[CurrentIndex].tittle = EmaillElement.value;
   ArrayCardes[CurrentIndex].Phone = Number(inputPhone.value);
   ArrayCardes[CurrentIndex].FullName = FullNameElement.value;
@@ -167,9 +167,7 @@ function updateDataNew() {
   UpdateButn.classList.add("d-none");
   SaveButn.classList.remove("d-none");
 }
-/* end function updateDataNew */
-
-/* start function AddFavorite */
+}
 function AddFavorite() {
   var boxFavorite = "";
   for (var i = 0; i < ArrayCardes.length; i++) {
@@ -181,9 +179,6 @@ function AddFavorite() {
   }
   document.getElementById("Changedata").innerHTML = boxFavorite;
 }
-/* end function AddFavorite */
-
-/* start function AddEmargencey */
 
 function AddEmargencey() {
   var boxEmargencey = "";
@@ -196,8 +191,6 @@ function AddEmargencey() {
   }
   document.getElementById("ChangeDataEmergency").innerHTML = boxEmargencey;
 }
-
-/* end function AddEmargencey */
 
 /**
  * 
@@ -213,13 +206,11 @@ function AddEmargencey() {
   
  */
 
-/* start function  validate */
-EmaillElement.addEventListener("change", HandleValidEmaill);
+EmaillElement.addEventListener("change",HandleValidEmaill);
 function HandleValidEmaill() {
   var emailragex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  var isValid = emailragex.test(EmaillElement.value);
   // console.log(emailragex.test(EmaillElement.value))
-  if (isValid) {
+  if (emailragex.test(EmaillElement.value) == true) {
     alertEmail.classList.remove("d-none");
     EmaillElement.classList.remove("is-invalid");
     EmaillElement.classList.add("is-valid");
@@ -231,29 +222,11 @@ function HandleValidEmaill() {
     return false;
   }
 }
-FullNameElement.addEventListener("change", HandleValidFullName);
-function HandleValidFullName() {
-  var Nameragex = /^[A-Za-z\s]{3,30}$/;
-  var isValid = Nameragex.test(FullNameElement.value);
-  // console.log(emailragex.test(EmaillElement.value))
-  if (isValid) {
-    alertName.classList.remove("d-none");
-    FullNameElement.classList.remove("is-invalid");
-    FullNameElement.classList.add("is-valid");
-    return true;
-  } else {
-    alertName.classList.add("d-none");
-    FullNameElement.classList.add("is-invalid");
-    FullNameElement.classList.remove("is-valid");
-    return false;
-  }
-}
 
-inputPhone.addEventListener("change", HandleValidphone);
+inputPhone.addEventListener("change",HandleValidphone );
 function HandleValidphone() {
   var PhoneRagex = /^01[0125][0-9]{8}$/;
-  var isValid = PhoneRagex.test(inputPhone.value);
-  if (isValid) {
+  if (PhoneRagex.test(inputPhone.value) == true) {
     alertPhone.classList.remove("d-none");
     inputPhone.classList.remove("is-invalid");
     inputPhone.classList.add("is-valid");
@@ -263,14 +236,30 @@ function HandleValidphone() {
     inputPhone.classList.add("is-invalid");
     inputPhone.classList.remove("is-valid");
     return false;
+
+  }
+}
+FullNameElement.addEventListener("change", HandleValidName);
+function HandleValidName() {
+  var NameRagex = /^[A-Za-z\s]{2,100}$/;
+  if (NameRagex.test(FullNameElement.value) == true) {
+    alertName.classList.remove("d-none");
+    FullNameElement.classList.remove("is-invalid");
+    FullNameElement.classList.add("is-valid");
+    return true;
+  } else {
+    alertName.classList.add("d-none");
+    FullNameElement.classList.add("is-invalid");
+    FullNameElement.classList.remove("is-valid");
+    return false;
+
   }
 }
 
 AddressElement.addEventListener("change", HandleValidadress);
 function HandleValidadress() {
   var AddressRagex = /^[A-Za-z0-9\s,.-]{5,100}$/;
-  var isValid = AddressRagex.test(AddressElement.value);
-  if (isValid) {
+  if (AddressRagex.test(AddressElement.value) == true) {
     alertAddress.classList.remove("d-none");
     AddressElement.classList.remove("is-invalid");
     AddressElement.classList.add("is-valid");
@@ -285,8 +274,7 @@ function HandleValidadress() {
 descraption.addEventListener("change", HandleValidDesc);
 function HandleValidDesc() {
   var AddressRagex = /^[A-Za-z0-9\s.,!?()-]{10,500}$/;
-  var isValid = AddressRagex.test(descraption.value);
-  if (isValid) {
+  if (AddressRagex.test(descraption.value) == true) {
     alertDescraption.classList.remove("d-none");
     descraption.classList.remove("is-invalid");
     descraption.classList.add("is-valid");
@@ -298,9 +286,7 @@ function HandleValidDesc() {
     return false;
   }
 }
-/* end function  validate */
 
-/* start function search */
 function SearchData() {
   var temp = "";
   setTimeout(() => {
@@ -364,4 +350,3 @@ function SearchData() {
   });
   document.getElementById("ShowData").innerHTML = temp;
 }
-/* end function search */
