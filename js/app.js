@@ -60,7 +60,7 @@ function AddCard() {
 
 function DisplayShow() {
   var temp = "";
-  for (var i = 0; i<ArrayCardes.length; i++) {
+  for (var i =0; i<ArrayCardes.length; i++) {
     temp += `<div class="d-flex">
                  <div class="width border flex-wrap d-flex">
                     <div class="card-one">
@@ -111,7 +111,7 @@ function DisplayShow() {
                         </div>
                         
                     </div>
-                </div>`;
+                </div>`
   }
   document.getElementById("ShowData").innerHTML = temp;
 }
