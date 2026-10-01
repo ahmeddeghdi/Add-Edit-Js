@@ -155,7 +155,6 @@ function EditDataNew(index) {
 }
 
 function updateDataNew() {
-    if(HandleValidEmaill() && HandleValidphone() && HandleValidadress() && HandleValidDesc() && HandleValidName()){
 
   ArrayCardes[CurrentIndex].tittle = EmaillElement.value;
   ArrayCardes[CurrentIndex].Phone = Number(inputPhone.value);
@@ -170,8 +169,6 @@ function updateDataNew() {
   DisplayShow();
   UpdateButn.classList.add("d-none");
   SaveButn.classList.remove("d-none");
-  return true;
-}
 }
 function AddFavorite() {
   var boxFavorite = "";
